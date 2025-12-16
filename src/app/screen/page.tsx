@@ -28,8 +28,9 @@ export default function ScreenPage() {
 
             {/* QR можно сгенерировать любым сервисом */}
             <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ТВОЙ-ДОМЕН.vercel.app/vote"
+                src="/qr-code.png"
                 alt="QR"
+                style={{ width: 200, marginTop: 20 }}
             />
         </div>
     );

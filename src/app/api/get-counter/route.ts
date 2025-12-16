@@ -1,12 +1,12 @@
-import {kv} from '@/lib/kv';
+import {redis} from '@/lib/redis';
 import {NextResponse} from 'next/server';
 
 export async function GET() {
-    let counter = await kv.get<number>('counter');
+    let counter = await redis.get<number>('counter');
 
     if (counter === null) {
         counter = 100;
-        await kv.set('counter', counter);
+        await redis.set('counter', counter);
     }
 
     return NextResponse.json({ counter });
